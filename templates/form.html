@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width", initial-scale="1">
+        <title>User Input</title>
+            
+        <link rel="stylesheet" href="static/form.css">
+            <!-- Add icon library -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+    </head>
+        <body>
+            
+            <style>
+                body {
+                  /* background-image: url('book.jpg'); */
+                  background-repeat: no-repeat;
+                  background-attachment: fixed;
+                  background-size: 100% 100%;
+                }
+                </style>
+                
+           
+            <div class="container">
+                <h2>Diet Recommendation</h2>
+                <div class="from-container">
+                    <!-- <img src="logo1.png" class="logo"/> -->
+                    
+                        <form class="input-group" enctype="multipart/form-data">
+                            <div class="input-name">
+                                Age: 
+                                <br>
+                                <input type="text" placeholder="Enter Age" name="Age" style="height:30px" size="30px" required>
+                            </div>
+                            
+                            <div class="input-name">
+                                Weight:
+                                <br>
+                                <input type="integer" placeholder="Enter weight" name="weight" style="height:30px" size="30px"
+                             required>
+                            </div>
+                            <div class="input-name">
+                                Height:
+                                <br>
+                                
+                                <input type="name" placeholder="Enter height" name="Height" style="height:30px" size="30px"
+                                 required>
+                           </div>
+
+                            <div class="input-name">
+                                Stream:
+                                <br> 
+                                <select class="stream" name="Stream" >
+                                <option>Diet plan options:</option>
+                                <option>Healthy</option>
+                                <option>Weight loss</option>
+                                <option>Weight gain</option>
+                               
+                                </select>
+                                <div class="arrow"></div>
+                            </div>   
+                            
+                            <input type="submit" class="button" value="veg">
+                            <input type="submit" class="button" value="non-veg">
+                    
+                           
+                
+                        </form>
+                </div>
+            </div>    
+        </body>
+</html>
