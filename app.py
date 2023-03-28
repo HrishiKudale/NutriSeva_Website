@@ -1,7 +1,8 @@
+
 import pymongo
 from flask import Flask, render_template, url_for
 from flask import Flask, request, render_template, redirect, session
-import bcrypt
+import bcrypt 
 
 app = Flask(__name__)
 # app.secret_key = "testing"
@@ -16,6 +17,7 @@ app = Flask(__name__)
 
 
 
+
 @app.route('/')
 def index ():
     return render_template('index.html')
@@ -25,10 +27,14 @@ def index ():
 def login():
     return render_template('login.html')
 
+    
 @app.route('/signup')
 def signup():
-    
-    return render_template('signup.html')  
+    return render_template('signup.html')
+
+@app.route('/donate')
+def donate():
+    return render_template('donate.html')  
 
 
 @app.route('/form')
@@ -75,8 +81,8 @@ def form():
 #     return render_template('login.html')
 
 #end of code to run it
-if __name__ == "__main__":
-  app.run(debug=True)
+# if __name__ == "__main__":
+#   app.run(debug=True)
 
 if __name__ == '__main__':
     app.run()
