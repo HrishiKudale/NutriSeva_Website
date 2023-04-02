@@ -7,268 +7,180 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/css/responsive.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
+    
 <style>
 html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 </style>
 </head>
 <body class="w3-light-grey">
 
-<!-- Top container -->
-<div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
-  <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
-  <span class="w3-bar-item w3-right">Logo</span>
-</div>
 
-<!-- Sidebar/menu -->
-<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
-  <div class="w3-container w3-row">
-    <div class="w3-col s4">
-      <img src="static/w3images/avatar2.png" class="w3-circle w3-margin-right" style="width:46px">
-    </div>
-    <div class="w3-col s8 w3-bar">
-      <span>Welcome, <strong>Mike</strong></span><br>
-      <a href="#" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i></a>
-      <a href="#" class="w3-bar-item w3-button"><i class="fa fa-user"></i></a>
-      <a href="#" class="w3-bar-item w3-button"><i class="fa fa-cog"></i></a>
-    </div>
-  </div>
-  <hr>
-  <div class="w3-container">
-    <h5>Dashboard</h5>
-  </div>
-  <div class="w3-bar-block">
-    <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-users fa-fw"></i>  Overview</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i>  Views</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>  Traffic</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bullseye fa-fw"></i>  Geo</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-diamond fa-fw"></i>  Orders</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bell fa-fw"></i>  News</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bank fa-fw"></i>  General</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-history fa-fw"></i>  History</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cog fa-fw"></i>  Settings</a><br><br>
-  </div>
-</nav>
+    <header>
+         <!-- Navbar start -->
+         <nav class="navbar navbar-dark navbar-expand-sm bg-purple pt-0 pb-0">
+          <a class="navbar-brand" href="http://127.0.0.1:5000/"><img src="static/img/newlogo.png" width="100" alt="logo"></a>
+          <a class="nav-link text-white text-white" href="http://127.0.0.1:5000/#home"><h1>Donation Website</h1> <span class="sr-only">(current)</span></a>
+          <!--<a class="navbar-brand" href="https://www.nofoodwaste.org/index.php"><img class="header-img" src="https://www.nofoodwaste.org/images/NFW-logo.png" width="100" alt="logo"></a>-->
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+             <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                   <a class="nav-link text-white text-white" href="http://127.0.0.1:5000/#home">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <li class="nav-item">
+                    <a class="nav-link" href="http://127.0.0.1:5000/#about">About</a>
+                </li>
+                <li class="nav-item dropdown">
+                   <a class="nav-link text-white dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                   Background
+                   </a>
+                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="https://www.nofoodwaste.org/chapters">Chapters</a>
+                      
+                      <a class="dropdown-item" href="https://www.nofoodwaste.org/team">Team</a>
+                      <a class="dropdown-item" href="https://www.nofoodwaste.org/partners">Partners</a>
+                      <a class="dropdown-item" href="https://www.nofoodwaste.org/awards">AWARDS & ACCOLADES</a>
+                   </div>
+                </li>
+                <li class="nav-item dropdown">
+                   <a class="nav-link text-white dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                   Initiatives
+                   </a>
+                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="https://www.nofoodwaste.org/fnb-atm" href="#">FNB ATM</a>
+                      <a class="dropdown-item" href="https://www.nofoodwaste.org/nfw-trainings">NFW Trainings</a>
+                      <a class="dropdown-item" href="https://www.nofoodwaste.org/share-your-day">Share Your Day</a>
+                   </div>
+                </li>
+                
+                <li class="nav-item">
+                   <a class="nav-link text-white" href="https://www.nofoodwaste.org/blogs">Blog</a>
+                </li>
+                <li class="nav-item">
+                   <a class="nav-link text-white" href="https://www.nofoodwaste.org/join-with-us">Join With Us</a>
+                </li>
+                <li class="nav-item">
+                   <a class="nav-link text-white" href="https://www.nofoodwaste.org/contact">Contact</a>
+                </li>
+                <li class="nav-item">
+                   <a class="nav-link text-white" href="https://www.nofoodwaste.org/faq">FAQ</a>
+                </li>
+             </ul>
+          </div>
+       </nav>
+       <!-- Navbar end -->
+    </header>
 
-
-<!-- Overlay effect when opening sidebar on small screens -->
-<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
-
-<!-- !PAGE CONTENT! -->
-<div class="w3-main" style="margin-left:300px;margin-top:43px;">
-
-  <!-- Header -->
-  <header class="w3-container" style="padding-top:22px">
-    <h5><b><i class="fa fa-dashboard"></i> My Dashboard</b></h5>
-  </header>
-
-  <div class="w3-row-padding w3-margin-bottom">
-    <div class="w3-quarter">
-      <div class="w3-container w3-red w3-padding-16">
-        <div class="w3-left"><i class="fa fa-comment w3-xxxlarge"></i></div>
-        <div class="w3-right">
-          <h3>52</h3>
-        </div>
-        <div class="w3-clear"></div>
-        <h4>Messages</h4>
-      </div>
-    </div>
-    <div class="w3-quarter">
-      <div class="w3-container w3-blue w3-padding-16">
-        <div class="w3-left"><i class="fa fa-eye w3-xxxlarge"></i></div>
-        <div class="w3-right">
-          <h3>99</h3>
-        </div>
-        <div class="w3-clear"></div>
-        <h4>Views</h4>
-      </div>
-    </div>
-    <div class="w3-quarter">
-      <div class="w3-container w3-teal w3-padding-16">
-        <div class="w3-left"><i class="fa fa-share-alt w3-xxxlarge"></i></div>
-        <div class="w3-right">
-          <h3>23</h3>
-        </div>
-        <div class="w3-clear"></div>
-        <h4>Shares</h4>
-      </div>
-    </div>
-    <div class="w3-quarter">
-      <div class="w3-container w3-orange w3-text-white w3-padding-16">
-        <div class="w3-left"><i class="fa fa-users w3-xxxlarge"></i></div>
-        <div class="w3-right">
-          <h3>50</h3>
-        </div>
-        <div class="w3-clear"></div>
-        <h4>Users</h4>
-      </div>
-    </div>
-  </div>
-
-  <div class="w3-panel">
-    <div class="w3-row-padding" style="margin:0 -16px">
-      <div class="w3-third">
-        <h5>Regions</h5>
-        <img src="static/w3images/region.jpg" style="width:100%" alt="Google Regional Map">
+      <!--Map-->
+        <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1rEQDBTuDTkP0JQ3Jo8zwyJMe5MPwnhI&ehbc=2E312F" width="1900" height="480"></iframe>
       </div>
       <div class="w3-twothird">
-        <h5>Feeds</h5>
-        <table class="w3-table w3-striped w3-white">
-          <tr>
-            <td><i class="fa fa-user w3-text-blue w3-large"></i></td>
-            <td>New record, over 90 views.</td>
-            <td><i>10 mins</i></td>
-          </tr>
-          <tr>
-            <td><i class="fa fa-bell w3-text-red w3-large"></i></td>
-            <td>Database error.</td>
-            <td><i>15 mins</i></td>
-          </tr>
-          <tr>
-            <td><i class="fa fa-users w3-text-yellow w3-large"></i></td>
-            <td>New record, over 40 users.</td>
-            <td><i>17 mins</i></td>
-          </tr>
-          <tr>
-            <td><i class="fa fa-comment w3-text-red w3-large"></i></td>
-            <td>New comments.</td>
-            <td><i>25 mins</i></td>
-          </tr>
-          <tr>
-            <td><i class="fa fa-bookmark w3-text-blue w3-large"></i></td>
-            <td>Check transactions.</td>
-            <td><i>28 mins</i></td>
-          </tr>
-          <tr>
-            <td><i class="fa fa-laptop w3-text-red w3-large"></i></td>
-            <td>CPU overload.</td>
-            <td><i>35 mins</i></td>
-          </tr>
-          <tr>
-            <td><i class="fa fa-share-alt w3-text-green w3-large"></i></td>
-            <td>New shares.</td>
-            <td><i>39 mins</i></td>
-          </tr>
-        </table>
+
       </div>
     </div>
   </div>
   <hr>
   <div class="w3-container">
-    <h5>General Stats</h5>
-    <p>New Visitors</p>
-    <div class="w3-grey">
-      <div class="w3-container w3-center w3-padding w3-green" style="width:25%">+25%</div>
+    <h5 class="color-orange text-center">Our works are designed to provide essential food support to underserved areas<br> in the form of food or packaged food products depending on the need.</h5>
+             <h5 class="text-dark text-center"> <b>Our goal is to ensure, Feed people not landfills.</b></h5>
+          </div>
+          <div class="col-md-12 col-12 mt-50">
+             <div class="row home-banner-cards">
+                <div class="col-lg-3 col-12 ">
+                   <div class="container bg-white shadow pt-5 pb-5 pl-4 pr-4 home-cards">
+                      <div class="row">
+                         <div class="col-md-12 text-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
+                               class="bi bi-telephone-fill color-orange" viewBox="0 0 16 16">
+                               <path fill-rule="evenodd"
+                                  d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
+                            </svg>
+                         </div>
+                         <div class="col-md-12 mt-4">
+                            <h5 class="text-center mt-3 mb-3 bold">Get in touch</h5>
+                            <p class="text-center text-black-50">
+                               Donors with surplus food/resources can reach us at <br> <a href="tel:9087790877">+91 9087790877</a>
+                            </p>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+                <div class="col-lg-3 col-12 ">
+                   <div class="container bg-white shadow pt-5 pb-5 pl-4 pr-4 home-cards">
+                      <div class="row">
+                         <div class="col-md-12 text-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
+                               class="bi bi-award-fill color-orange" viewBox="0 0 16 16">
+                               <path
+                                  d="M8 0l1.669.864 1.858.282.842 1.68 1.337 1.32L13.4 6l.306 1.854-1.337 1.32-.842 1.68-1.858.282L8 12l-1.669-.864-1.858-.282-.842-1.68-1.337-1.32L2.6 6l-.306-1.854 1.337-1.32.842-1.68L6.331.864 8 0z" />
+                               <path
+                                  d="M4 11.794V16l4-1 4 1v-4.206l-2.018.306L8 13.126 6.018 12.1 4 11.794z" />
+                            </svg>
+                         </div>
+                         <div class="col-md-12 mt-4">
+                            <h5 class="text-center mt-3 mb-3 bold">Quality check</h5>
+                            <p class="text-center text-black-50">
+                               Excess Food will be checked based on our Food Safety and Standard Guidelines
+                            </p>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+                <div class="col-lg-3 col-12 ">
+                   <div class="container bg-white shadow pt-5 pb-5 pl-4 pr-4 home-cards">
+                      <div class="row">
+                         <div class="col-md-12 text-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
+                               class="bi bi-compass color-orange" viewBox="0 0 16 16">
+                               <path
+                                  d="M8 16.016a7.5 7.5 0 0 0 1.962-14.74A1 1 0 0 0 9 0H7a1 1 0 0 0-.962 1.276A7.5 7.5 0 0 0 8 16.016zm6.5-7.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
+                               <path d="M6.94 7.44l4.95-2.83-2.83 4.95-4.949 2.83 2.828-4.95z" />
+                            </svg>
+                         </div>
+                         <div class="col-md-12 mt-4">
+                            <h5 class="text-center mt-3 mb-3 bold">Locate</h5>
+                            <p class="text-center text-black-50">
+                               We spot the nearest “Hunger Spot” which is the most underserved areas
+                            </p>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+                <div class="col-lg-3 col-12">
+                   <div class="container bg-white shadow pt-5 pb-5 pl-4 pr-4 home-cards">
+                      <div class="row">
+                         <div class="col-md-12 text-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
+                               class="bi bi-truck color-orange" viewBox="0 0 16 16">
+                               <path
+                                  d="M0 3.5A1.5 1.5 0 0 1 1.5 2h9A1.5 1.5 0 0 1 12 3.5V5h1.02a1.5 1.5 0 0 1 1.17.563l1.481 1.85a1.5 1.5 0 0 1 .329.938V10.5a1.5 1.5 0 0 1-1.5 1.5H14a2 2 0 1 1-4 0H5a2 2 0 1 1-3.998-.085A1.5 1.5 0 0 1 0 10.5v-7zm1.294 7.456A1.999 1.999 0 0 1 4.732 11h5.536a2.01 2.01 0 0 1 .732-.732V3.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .294.456zM12 10a2 2 0 0 1 1.732 1h.768a.5.5 0 0 0 .5-.5V8.35a.5.5 0 0 0-.11-.312l-1.48-1.85A.5.5 0 0 0 13.02 6H12v4zm-9 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm9 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+                            </svg>
+                         </div>
+                         <div class="col-md-12 mt-4">
+                            <h5 class="text-center mt-3 mb-3 bold">Deliver</h5>
+                            <p class="text-center text-black-50">
+                               Excess food is distributed to needy people with love.
+                            </p>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
     </div>
-
-    <p>New Users</p>
-    <div class="w3-grey">
-      <div class="w3-container w3-center w3-padding w3-orange" style="width:50%">50%</div>
-    </div>
-
-    <p>Bounce Rate</p>
-    <div class="w3-grey">
-      <div class="w3-container w3-center w3-padding w3-red" style="width:75%">75%</div>
-    </div>
-  </div>
-  <hr>
-
-  <div class="w3-container">
-    <h5>Countries</h5>
-    <table class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white">
-      <tr>
-        <td>United States</td>
-        <td>65%</td>
-      </tr>
-      <tr>
-        <td>UK</td>
-        <td>15.7%</td>
-      </tr>
-      <tr>
-        <td>Russia</td>
-        <td>5.6%</td>
-      </tr>
-      <tr>
-        <td>Spain</td>
-        <td>2.1%</td>
-      </tr>
-      <tr>
-        <td>India</td>
-        <td>1.9%</td>
-      </tr>
-      <tr>
-        <td>France</td>
-        <td>1.5%</td>
-      </tr>
-    </table><br>
-    <button class="w3-button w3-dark-grey">More Countries  <i class="fa fa-arrow-right"></i></button>
-  </div>
-  <hr>
-  <div class="w3-container">
-    <h5>Recent Users</h5>
-    <ul class="w3-ul w3-card-4 w3-white">
-      <li class="w3-padding-16">
-        <img src="static/w3images/avatar2.png" class="w3-left w3-circle w3-margin-right" style="width:35px">
-        <span class="w3-xlarge">Mike</span><br>
-      </li>
-      <li class="w3-padding-16">
-        <img src="static/w3images/avatar5.png" class="w3-left w3-circle w3-margin-right" style="width:35px">
-        <span class="w3-xlarge">Jill</span><br>
-      </li>
-      <li class="w3-padding-16">
-        <img src="static/w3images/avatar6.png" class="w3-left w3-circle w3-margin-right" style="width:35px">
-        <span class="w3-xlarge">Jane</span><br>
-      </li>
-    </ul>
-  </div>
-  <hr>
-
-  <div class="w3-container">
-    <h5>Recent Comments</h5>
-    <div class="w3-row">
-      <div class="w3-col m2 text-center">
-        <img class="w3-circle" src="static/w3images/avatar3.png" style="width:96px;height:96px">
-      </div>
-      <div class="w3-col m10 w3-container">
-        <h4>John <span class="w3-opacity w3-medium">Sep 29, 2014, 9:12 PM</span></h4>
-        <p>Keep up the GREAT work! I am cheering for you!! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><br>
-      </div>
-    </div>
-
-    <div class="w3-row">
-      <div class="w3-col m2 text-center">
-        <img class="w3-circle" src="static/w3images/avatar1.png" style="width:96px;height:96px">
-      </div>
-      <div class="w3-col m10 w3-container">
-        <h4>Bo <span class="w3-opacity w3-medium">Sep 28, 2014, 10:15 PM</span></h4>
-        <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><br>
-      </div>
-    </div>
-  </div>
-  <br>
-  <div class="w3-container w3-dark-grey w3-padding-32">
-    <div class="w3-row">
-      <div class="w3-container w3-third">
-        <h5 class="w3-bottombar w3-border-green">Demographic</h5>
-        <p>Language</p>
-        <p>Country</p>
-        <p>City</p>
-      </div>
-      <div class="w3-container w3-third">
-        <h5 class="w3-bottombar w3-border-red">System</h5>
-        <p>Browser</p>
-        <p>OS</p>
-        <p>More</p>
-      </div>
-      <div class="w3-container w3-third">
-        <h5 class="w3-bottombar w3-border-orange">Target</h5>
-        <p>Users</p>
-        <p>Active</p>
-        <p>Geo</p>
-        <p>Interests</p>
-      </div>
-    </div>
-  </div>
+ </section>
 
   <!-- Footer -->
   <footer class="w3-container w3-padding-16 w3-light-grey">
