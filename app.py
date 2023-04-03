@@ -1,20 +1,19 @@
-
-
+from flask_mysqldb import MySQL 
+import MySQLdb.cursors
 from flask import Flask, render_template, url_for
 from flask import Flask, request, render_template, redirect, session
-import bcrypt 
-
-app = Flask(__name__)
-# app.secret_key = "testing"
-# client = pymongo.MongoClient("mongodb+srv://username:password@cluster0-xth9g.mongodb.net/Richard?retryWrites=true&w=majority")
-# db = client.get_database('total_records')
-# records = db.register
-
-
+import re
 
 
 app = Flask(__name__)
-
+app.secret_key = 'xyzsdfg'
+  
+app.config['MYSQL_HOST'] = 'localhost'
+app.config['MYSQL_USER'] = 'root'
+app.config['MYSQL_PASSWORD'] = ''
+app.config['MYSQL_DB'] = 'user-system'
+  
+mysql = MySQL(app)
 
 
 
@@ -22,70 +21,77 @@ app = Flask(__name__)
 def index ():
     return render_template('index.html')
 
-    
-@app.route('/login')
+@app.route('/login', methods =['GET', 'POST'])
 def login():
-    return render_template('login.html')
-
-    
-@app.route('/signup')
-def signup():
-    return render_template('signup.html')
+    mesage = ''
+    if request.method == 'POST' and 'email' in request.form and 'password' in request.form:
+        email = request.form['email']
+        password = request.form['password']
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor.execute('SELECT * FROM user WHERE email = % s AND password = % s', (email, password, ))
+        user = cursor.fetchone()
+        if user:
+            session['loggedin'] = True
+            session['userid'] = user['userid']
+            session['name'] = user['name']
+            session['email'] = user['email']
+            mesage = 'Logged in successfully !'
+            return render_template('user.html', mesage = mesage)
+        else:
+            mesage = 'Please enter correct email / password !'
+    return render_template('login.html', mesage = mesage)
+  
+@app.route('/logout')
+def logout():
+    session.pop('loggedin', None)
+    session.pop('userid', None)
+    session.pop('email', None)
+    return redirect(url_for('login'))
+  
+@app.route('/register', methods =['GET', 'POST'])
+def register():
+    mesage = ''
+    if request.method == 'POST' and 'name' in request.form and 'password' in request.form and 'email' in request.form :
+        userName = request.form['name']
+        password = request.form['password']
+        email = request.form['email']
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor.execute('SELECT * FROM user WHERE email = % s', (email, ))
+        account = cursor.fetchone()
+        if account:
+            mesage = 'Account already exists !'
+        elif not re.match(r'[^@]+@[^@]+\.[^@]+', email):
+            mesage = 'Invalid email address !'
+        elif not userName or not password or not email:
+            mesage = 'Please fill out the form !'
+        else:
+            cursor.execute('INSERT INTO user VALUES (NULL, % s, % s, % s)', (userName, email, password, ))
+            mysql.connection.commit()
+            mesage = 'You have successfully registered !'
+    elif request.method == 'POST':
+        mesage = 'Please fill out the form !'
+    return render_template('register.html', mesage = mesage)
 
 @app.route('/donate')
 def donate():
-    return render_template('donate.html')  
+    return render_template('donate.html') 
+    
+if __name__ == "__main__":
+    app.run(debug=True)
 
 
-@app.route('/form')
-def form():
-    return render_template('form.html')
 
 
 
-#create Flask app
+    
+
+ 
 
 
-# @app.route("/", methods=['post', 'get'])
-# def index():
-#     message = ''
-#     if "email" in session:
-#         return redirect(url_for("logged_in"))
-#     if request.method == "POST":
-#         user = request.form.get("fullname")
-#         email = request.form.get("email")
-        
-#         password1 = request.form.get("password1")
-#         password2 = request.form.get("password2")
-        
-#         user_found = records.find_one({"name": user})
-#         email_found = records.find_one({"email": email})
-#         if user_found:
-#             message = 'There already is a user by that name'
-#             return render_template('index.html', message=message)
-#         if email_found:
-#             message = 'This email already exists in database'
-#             return render_template('index.html', message=message)
-#         if password1 != password2:
-#             message = 'Passwords should match!'
-#             return render_template('index.html', message=message)
-#         else:
-#             hashed = bcrypt.hashpw(password2.encode('utf-8'), bcrypt.gensalt())
-#             user_input = {'name': user, 'email': email, 'password': hashed}
-#             records.insert_one(user_input)
-            
-#             user_data = records.find_one({"email": email})
-#             new_email = user_data['email']
-   
-#             return render_template('index.html', email=new_email)
-#     return render_template('login.html')
 
-#end of code to run it
-# if __name__ == "__main__":
-#   app.run(debug=True)
 
-if __name__ == '__main__':
-    app.run()
+
+
 
 
 
