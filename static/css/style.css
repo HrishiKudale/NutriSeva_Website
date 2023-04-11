@@ -48,6 +48,7 @@ body{
 header{
     background-color: #303054;
     width: 100%;
+    position: relative;
     
 }
 
@@ -55,6 +56,8 @@ header .navbar-brand{
     font-size: 22px;
     font-weight: 600;
     color: #fff;
+    position: absolute;
+    left: 20px;
 }
 
 nav{
