@@ -21,33 +21,6 @@ mysql = MySQL(app)
 def index ():
     return render_template('index.html')
 
-@app.route('/login', methods =['GET', 'POST'])
-def login():
-    mesage = ''
-    if request.method == 'POST' and 'email' in request.form and 'password' in request.form:
-        email = request.form['email']
-        password = request.form['password']
-        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-        cursor.execute('SELECT * FROM user WHERE email = % s AND password = % s', (email, password, ))
-        user = cursor.fetchone()
-        if user:
-            session['loggedin'] = True
-            session['userid'] = user['userid']
-            session['name'] = user['name']
-            session['email'] = user['email']
-            mesage = 'Logged in successfully !'
-            return render_template('donate.html', mesage = mesage)
-        else:
-            mesage = 'Please enter correct email / password !'
-    return render_template('login.html', mesage = mesage)
-  
-@app.route('/logout')
-def logout():
-    session.pop('loggedin', None)
-    session.pop('userid', None)
-    session.pop('email', None)
-    return redirect(url_for('login'))
-  
 @app.route('/register', methods =['GET', 'POST'])
 def register():
     mesage = ''
@@ -71,6 +44,36 @@ def register():
     elif request.method == 'POST':
         mesage = 'Please fill out the form !'
     return render_template('register.html', mesage = mesage)
+
+@app.route('/login', methods =['GET', 'POST'])
+def login():
+    mesage = ''
+    if request.method == 'POST' and 'email' in request.form and 'password' in request.form:
+        email = request.form['email']
+        password = request.form['password']
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor.execute('SELECT * FROM user WHERE email = % s AND password = % s', (email, password, ))
+        user = cursor.fetchone()
+        if user:
+            session['loggedin'] = True
+            session['userid'] = user['userid']
+            session['name'] = user['name']
+            session['email'] = user['email']
+            mesage = 'Logged in successfully !'
+            return render_template('donate.html', mesage = mesage)
+        else:
+            mesage = 'Please enter correct email / password !'
+    return render_template('login.html', mesage = mesage)
+  
+@app.route('/logout')
+def logout():
+    session.pop('loggedin', False)
+    session.pop('userid', None)
+    session.pop('email', None)
+    session.pop('name',None)
+    return redirect(url_for('index'))
+  
+
 
 @app.route('/donate')
 def donate():

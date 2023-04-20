@@ -58,11 +58,22 @@
                                             <a class="nav-link" href="#contact">Contact</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="{{url_for('login')}}">Login</a>
+                                            <a class="nav-link" href="{{url_for('donate')}}">Donate</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="{{url_for('register')}}">Register</a>
-                                          </li>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{url_for('login')}}">Login</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{url_for('logout')}}">Logout</a>
+                                        </li>
+                                        {% if 'name' in session %}
+                                        <li class="nav-item">
+                                        <a class="nav-link" href="#">{{ session['name'] }}</a>
+                                        </li>
+                                        {% endif %}
                                     </ul>
                                </div>
                             </nav>
