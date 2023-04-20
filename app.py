@@ -60,7 +60,7 @@ def login():
             session['name'] = user['name']
             session['email'] = user['email']
             mesage = 'Logged in successfully !'
-            return render_template('donate.html', mesage = mesage)
+            return render_template('index.html', mesage = mesage)
         else:
             mesage = 'Please enter correct email / password !'
     return render_template('login.html', mesage = mesage)
