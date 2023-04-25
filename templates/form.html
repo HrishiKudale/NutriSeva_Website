@@ -22,53 +22,52 @@
                 }
                 </style>
                 
-           
             <div class="container">
                 <h2>Diet Recommendation</h2>
                 <div class="from-container">
                     <!-- <img src="logo1.png" class="logo"/> -->
                     
                         <form class="input-group" enctype="multipart/form-data">
-                            <div class="input-name">
+                            <div class="field">
                                 Age: 
                                 <br>
-                                <input type="text" placeholder="Enter Age" name="Age" style="height:30px" size="30px" required>
+                                <input type="text" placeholder="Enter Age" name="age" id="age" style="height:30px" size="30px" required>
                             </div>
+                            <div class="field">
+                                Veg/Nonveg:
+                                <br>
                             
-                            <div class="input-name">
+                                <input type="name" placeholder="Enter Veg/Nonveg" name="veg/nonveg" id= "veg/nonveg" style="height:30px" size="30px"
+                                 required>
+                            </div>
+
+                            
+                            <div class="field">
                                 Weight:
                                 <br>
-                                <input type="integer" placeholder="Enter weight" name="weight" style="height:30px" size="30px"
+                                <input type="integer" placeholder="Enter weight" name="weight" id="weight" style="height:30px" size="30px"
                              required>
                             </div>
-                            <div class="input-name">
+                            <div class="field">
                                 Height:
                                 <br>
                                 
-                                <input type="name" placeholder="Enter height" name="Height" style="height:30px" size="30px"
+                                <input type="name" placeholder="Enter height" name="height" id="height" style="height:30px" size="30px"
                                  required>
                            </div>
-
-                            <div class="input-name">
-                                Stream:
-                                <br> 
-                                <select class="stream" name="Stream" >
-                                <option>Diet plan options:</option>
-                                <option>Healthy</option>
-                                <option>Weight loss</option>
-                                <option>Weight gain</option>
-                               
-                                </select>
-                                <div class="arrow"></div>
-                            </div>   
-                            
-                            <input type="submit" class="button" value="veg">
-                            <input type="submit" class="button" value="non-veg">
+                          
+                           <div class="field">
+                             <button class="button is-fullwidth is-rounded is-success">Submit</button>
+                           </div>
+                           
                     
                            
                 
                         </form>
+                        {% if prediction is defined %}
+                        <p>Prediction: {{ prediction[0] }}</p>
+                        {% endif %}   
                 </div>
-            </div>    
+            </div> 
         </body>
 </html>

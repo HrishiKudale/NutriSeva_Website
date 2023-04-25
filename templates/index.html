@@ -8,16 +8,15 @@
     <title>NutriSeva</title>
     <link rel="stylesheet" href="static/css/style.css">
     <link rel="stylesheet" href="static/css/responsive.css">
+    <link rel="stylesheet" href="static/css/swiper.css">
+    <link rel="stylesheet" href="static/css/newsflicker.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
 
-    <link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
-/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
@@ -29,15 +28,9 @@
 
         <header>
             <div class="container">
-                <nav class="navbar navbar-expand-lg navbar-dark">
-                    <a class="navbar-brand" href="#home">NutriSeva</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse"
-                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-
-                                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <a class="navbar-brand" href="#home">NutriSeva</a>
+                   <nav class="navbar navbar-expand-lg navbar-dark">
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                     <ul class="navbar-nav ml-auto">
                                         <li class="nav-item active">
                                             <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
@@ -61,22 +54,15 @@
                                </div>
                             </nav>
                         </div>
-                    </div>
-                  </div>
-             </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-        </header>
+                    </a>
+                </nav>
+            </div>    
 
         <div class="cont-sec">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6">
-                        <p>Contact No : <a href="tel: +9198659****59">+91 9167057021</a></p>
+                        <p>Contact No : <a href="tel: +9198659****59">+91 9987493054</a></p>
                     </div>
                     <div class="col-lg-6">
                         <div class="social">
@@ -90,47 +76,70 @@
                 </div>
             </div>
         </div>
-
-            <!-- Swiper -->
-        </div>
-    </div>
-
-
-    <section class="Swiper" id="swiper">
-  <div class="swiper mySwiper">
-
+    </header>
+</div>
+<section class="Swiper" id="swiper">
+    <div class="swiper mySwiper">
+  
     <div class="swiper-wrapper">
+          
+        <div class="swiper-slide"><a href = "http://127.0.0.1:5000/form"><img src="static/img/bg3.jpg" alt="home-image"/height ="680" width = "1960"></a></div>
+        <div class="swiper-slide"><a href = "http://127.0.0.1:5000/login"><img src="static/img/Donation1.png" alt="home-image"/height ="680" width = "1960"></a></div>
         
-      <div class="swiper-slide"><img src="static/img/bg3.jpg" alt="home-image"/>"<a href="donate" class="btn1">Donate now</a> </div>
-      <div class="swiper-slide"><img src="static/img/bg3.jpg" alt="home-image"/>"<a href="form" class="btn1">Diet Recommendation</a> </div>
-      
-
-    </div>
-</div>
-<div class="swiper-button-next"></div>
-<div class="swiper-button-prev"></div>
-<div class="swiper-pagination"></div>
-</div>
+  
+      </div>
   </div>
-</div>
-  <section class="home-sec" id="home">
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+
+
+<section class="home-sec" id="home">
+    <h1 style = "margin-top: -8px:">
     <div class="container">
         <div class="home-content">
+            <div class="heading">
+                <h2>Daily Donation:</h2>
+            </div>
             <div class="row">
-                <div class="col-lg-6 align-item-center">
+                <div class="align-item-center">
+
                     <div class="home-info">
                         <h1>Alone we can do little, together we can do so much!</h1>
-                        <h2>At <span>NutriSeva</span> manage wastage for needy peoples</h2>
-                        <p>Donating food not only promotes macroeconomic improvement, but it also reduces disposal expenses and qualifies for tax deductions with correct receipts.</p>
-                        <div class="buttons">
-                            <a href="donate" class="btn1">Donate now</a>
+                        
+                    </h1>
+                <div id="ind_side" class="col-12 col-md-12 mx-0">
+                    <div class="card mt-3" style="background-color:#1B2845">
+                        <div class="card-body m-0 p-2">
+                            <h4 class="text-light text-center font-weight-bold">What's New</h4>
+                            <hr style="border-bottom: 2px solid white;">
+                            <marquee style="margin-top:10;height:300px; align:center" behavior="scroll" direction="up" scrollamount="10" onmouseover="this.stop();" onmouseout="this.start()">
+                                <div style="color:white;linespace">
+                
+                                <span class="badge badge-danger blink">NEW</span> <a target="_blank" href="http://127.0.0.1:5000/login" style="color:white">
+                                       Donate Lunch to Prakash NGO</a><br><br><br>
+                
+                                <span class="badge badge-danger blink">NEW</span> <a target="_blank" href="http://127.0.0.1:5000/login" style="color:white">
+                                        Donate breakfast to Utkarsh Foundation</a><br><br><br>
+                
+                                        <span class="badge badge-danger blink">NEW</span> <a target="_blank" href="http://127.0.0.1:5000/login" style="color:white">
+                                        Donate dinner !! Click here to check </a><br><br><br>
+                                        
+                                        <span class="badge badge-danger blink">NEW</span> <a target="_blank" href="http://127.0.0.1:5000/login" style="color:white">
+                                        Log in </a><br><br><br>
+                
+                                        
+                                        </marquee>
+                                    </div>
+                                     
+                
                         </div>
                     </div>
-                </div>
+               
             </div>
         </div>
     </div>
-    </section>
+ </div>
+</section>
 
     <section class="don-sec" id="donation">
         <div class="container">
@@ -352,6 +361,116 @@
             el: ".swiper-pagination",
             clickable: true,
           },
+        });
+
+        $(document).ready(function() {
+            $('marquee').mouseover(function() {
+                $(this).attr('scrollamount', 0);
+            }).mouseout(function() {
+                $(this).attr('scrollamount', 10);
+            });
+            $('.main-slick').slick({
+                autoplay: true,
+                dots: true,
+                // prevArrow: '<i class="fa fa-arrow-left"></i>',
+                // nextArrow: '<i class="fa fa-arrow-right"></i>',
+                arrows: true,
+                responsive: [{
+                        breakpoint: 400,
+                        settings: {
+                            arrows: false,
+                        }
+                    },
+                    {
+                        breakpoint: 600,
+                        settings: {
+                            arrows: false,
+                        }
+                    }
+                ]
+            });
+            $('.logo-slide').slick({
+                arrows: false,
+                slidesToShow: 4,
+                autoplay: true,
+                responsive: [{
+                        breakpoint: 400,
+                        settings: {
+                            slidesToShow: 3
+                        }
+                    },
+                    {
+                        breakpoint: 600,
+                        settings: {
+                            slidesToShow: 4
+                        }
+                    }
+                ]
+            });
+            // $('.card-slick').slick({
+            //     arrows:false,
+            //     slidesToShow:3,
+            //     responsive:[
+            //         {
+            //             breakpoint:600,
+            //             settings:{
+            //                 slidesToShow:1,
+            //                 centerMode:true,
+            //                 arrows:false,
+            //                 dots:false,
+            //                 centerPadding: '40px',
+            //                 autoplay:true,
+            //                 autoplaySpeed:5000,
+            //             }
+            //         }
+            //     ]
+            // });
+            $('.ach-slick').slick({
+                arrows: false,
+                responsive: [{
+                        breakpoint: 2000,
+                        settings: {
+                            slidesToShow: 3,
+                        }
+                    },
+                    {
+                        breakpoint: 600,
+                        settings: {
+                            fade: true,
+                            autoplay: true,
+                            autoplaySpeed: 4000,
+                        }
+                    }
+                ]
+            });
+            // $('.card2-slick').slick({
+            //     arrows:false,
+            //     slidesToShow:3,
+            //     responsive:[
+            //         {
+            //             breakpoint:600,
+            //             settings:{
+            //                 slidesToShow:1,
+            //                 centerMode:true,
+            //                 arrows:false,
+            //                 dots:false,
+            //                 centerPadding: '40px',
+            //                 autoplay:true,
+            //                 autoplaySpeed:5000,
+            //             }
+            //         }
+            //     ]
+            // });
+            $(".collaboration-slick").slick({
+                dots: false,
+                infinite: true,
+                arrows: false,
+                speed: 600,
+                fade: true,
+                cssEase: 'linear',
+                autoplay: true,
+                autoplaySpeed: 3000
+            });
         });
       </script>
 </body>

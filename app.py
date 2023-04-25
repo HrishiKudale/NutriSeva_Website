@@ -1,9 +1,13 @@
 from flask_mysqldb import MySQL 
 import MySQLdb.cursors
 from flask import Flask, render_template, url_for
-from flask import Flask, request, render_template, redirect, session
+from flask import Flask, request, jsonify, render_template, redirect, session
 import re
+import numpy as np
+import pickle
 
+# Load your trained model into memory
+loaded_model = pickle.load(open("model.pkl",'rb'))
 
 app = Flask(__name__)
 app.secret_key = 'xyzsdfg'
@@ -20,6 +24,10 @@ mysql = MySQL(app)
 @app.route('/')
 def index ():
     return render_template('index.html')
+
+@app.route('/form')
+def form():
+    return render_template('form.html') 
 
 @app.route('/login', methods =['GET', 'POST'])
 def login():
@@ -43,9 +51,11 @@ def login():
   
 @app.route('/logout')
 def logout():
-    session.pop('loggedin', None)
+    session.pop('loggedin', False)
     session.pop('userid', None)
     session.pop('email', None)
+    session.pop('name', None)
+
     return redirect(url_for('login'))
   
 @app.route('/register', methods =['GET', 'POST'])
@@ -75,7 +85,31 @@ def register():
 @app.route('/donate')
 def donate():
     return render_template('donate.html') 
+
+@app.route('/predict', methods=['POST'])
+def predict():
+    # Get the form data from the request
+    age = int(request.form.get('age'))
+    vegnonveg = int(request.form.get('veg/nonveg'))
+    weight = int(request.form.get('weight'))
+    height = int(request.form.get('height'))
+
+    # Convert the form data to a numpy array
+    features = np.array([[age, vegnonveg, weight, height]])
+
+    # Make a prediction using the loaded model
+    prediction = loaded_model.predict(features)
     
+    if prediction == 0:
+        result = 'Weight Loss'
+    elif prediction == 1:
+        result = 'Healthy'
+    elif prediction == 2:
+        result = 'Weight Gain'
+        
+    # Return the prediction as JSON
+    return render_template('form.html', prediction=prediction)
+
 if __name__ == "__main__":
     app.run(debug=True)
 

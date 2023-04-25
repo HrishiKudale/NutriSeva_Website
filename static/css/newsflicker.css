@@ -1,0 +1,10 @@
+.flicker
+{
+    position : absolute;
+    float: right;
+    border: 1px solid #003B62;
+    font-family : verdana;
+    background-color : #B5CFE0;
+    padding-left : 5px;
+   
+}

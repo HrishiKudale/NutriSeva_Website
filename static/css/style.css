@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family:  'Georgia', Georgia, 'Times New Roman', Times, serif;
     scroll-behavior: smooth;
 }
 
@@ -48,12 +48,15 @@ body{
 header{
     background-color: #303054;
     width: 100%;
+    position: relative;
     
 }
 
 header .navbar-brand{
     font-size: 22px;
     font-weight: 600;
+    position:absolute;
+    left:20px;
     color: #fff;
 }
 
@@ -95,7 +98,7 @@ nav{
 }
 
 .home-sec .home-content {
-    align-items: center;
+    align-items: right;
 }
 
 .home-sec .home-content h1{
@@ -128,7 +131,7 @@ nav{
 }
 
 .home-sec .home-content{
-    align-items: center;
+    align-items: right;
     padding: 150px 0;
 }
 
